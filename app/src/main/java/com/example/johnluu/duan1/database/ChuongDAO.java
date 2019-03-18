@@ -23,14 +23,14 @@ public class ChuongDAO {
 
     }
 
-    public void ThemChuong(Chuong chuong){
+    public void ThemChuong(Chuong chuongg){
         db=dbh.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("_idchuong",chuong._idchuong);
-        values.put("_idsach",chuong._idsach);
-        values.put("tenchuong",chuong.tenchuong);
-        values.put("duongdan",chuong.duongdan);
-        values.put("audio",chuong.audio);
+        values.put("_idchuong",chuongg._idchuong);
+        values.put("_idsach",chuongg._idsach);
+        values.put("tenchuong",chuongg.tenchuong);
+        values.put("duongdan",chuongg.duongdan);
+        values.put("audio",chuongg.audio);
         db.insert("chuong",null,values);
 
 

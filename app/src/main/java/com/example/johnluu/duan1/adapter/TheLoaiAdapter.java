@@ -75,7 +75,7 @@ public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.TheLoaiV
                 dialog.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
-                        deleteItem(i);
+                        deleteItem(position);
                         Toast.makeText(c, "Thể Loại đã được xóa", Toast.LENGTH_SHORT).show();
                     }
                 });

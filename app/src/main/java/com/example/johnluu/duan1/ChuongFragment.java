@@ -42,7 +42,7 @@ public class ChuongFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView( final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_chuong, container, false);
@@ -57,7 +57,7 @@ public class ChuongFragment extends Fragment {
                 LayoutInflater inf = getLayoutInflater();
                 final View vi = inf.inflate(R.layout.dialog_themchuong,null);
                 final EditText et_tenchuong = vi.findViewById(R.id.et_themchuong);
-                Button bt_them_theloai = vi.findViewById(R.id.bt_them_theloai);
+                Button bt_them_theloai = vi.findViewById(R.id.bt_themchuong);
                 Button bt_huy = vi.findViewById(R.id.bt_huy);
 
                 builder.setView(vi);
@@ -103,7 +103,7 @@ public class ChuongFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rv_chuong.setLayoutManager(layoutManager);
         chuongAdapter= new ChuongAdapter(getActivity(),dschuong);
-      rv_chuong.setAdapter(chuongAdapter);
+       rv_chuong.setAdapter(chuongAdapter);
     }
 
 }

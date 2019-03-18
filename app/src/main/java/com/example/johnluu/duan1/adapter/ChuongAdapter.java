@@ -68,7 +68,7 @@ public class ChuongAdapter extends RecyclerView.Adapter<ChuongAdapter.ChuongView
                         dialog.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
-                                deleteItem(i);
+                                deleteItem(position);
                                 Toast.makeText(c, "Chuong đã được xóa", Toast.LENGTH_SHORT).show();
                             }
                         });
