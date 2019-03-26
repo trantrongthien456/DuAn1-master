@@ -31,5 +31,8 @@ public class Chuong {
     public Chuong(String tenchuong) {
            this.tenchuong=tenchuong;
     }
+
+    public Chuong(int id, String et_ten) {
+    }
 }
 

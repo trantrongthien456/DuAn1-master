@@ -11,67 +11,62 @@ import com.example.johnluu.duan1.model.Chuong;
 import java.util.ArrayList;
 
 public class ChuongDAO {
+
     SQLiteDatabase db;
     Context c;
     DBHelper dbh;
 
-
-    public ChuongDAO(Context c){
+    public ChuongDAO(Context c) {
         this.c=c;
         dbh=new DBHelper(c);
-
-
     }
 
-    public void ThemChuong(Chuong chuongg){
-        db=dbh.getWritableDatabase();
+    public void ThemChuong(Chuong ch){
+        db = dbh.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("_idchuong",chuongg._idchuong);
-        values.put("_idsach",chuongg._idsach);
-        values.put("tenchuong",chuongg.tenchuong);
-        values.put("duongdan",chuongg.duongdan);
-        values.put("audio",chuongg.audio);
+        values.put("_idchuong",ch._idchuong);
+        values.put("_idsach",ch._idsach);
+        values.put("tenchuong",ch.tenchuong);
+        values.put("duongdan",ch.duongdan);
+        values.put("audio",ch.audio);
         db.insert("chuong",null,values);
 
 
-
-
     }
-    public ArrayList<Chuong> XemChuong(){
-        ArrayList<Chuong>dschuong = new ArrayList<Chuong>();
+    public ArrayList<Chuong> xemDSChuong(){
+        ArrayList<Chuong> dsschuong = new ArrayList<Chuong>();
         dbh = new DBHelper(c);
         db = dbh.getReadableDatabase();
         Cursor c = db.rawQuery("select * from chuong",null);
         if(c.moveToFirst()){
             do{
-                int  _idchuong = c.getInt(0);
-                int  _idsach=c.getInt(1);
+                int _idchuong = c.getInt(0);
+                int _idsach= c.getInt(1);
                 String tenchuong =c.getString(2);
                 String duongdan = c.getString(3);
-                String  audio =c.getString(4);
-
-                Chuong chuong = new Chuong(_idchuong,_idsach,tenchuong,duongdan,audio);
-                dschuong.add(chuong);
+                String audio = c.getString(4);
 
             }while (c.moveToNext());
-        }return dschuong;
+        }
+        return dsschuong;
 
     }
-    public void xoaChuong(int _id){
+    public void XoaChuong (int _id){
         db=dbh.getWritableDatabase();
         db.delete("chuong","_idchuong=?",new String[]{_id+""});
 
     }
-
-    public void suaChuong(Chuong chuong){
-        db=dbh.getWritableDatabase();
+    public void suaChuonh(Chuong ch){
+        db = dbh.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("_idchuong",chuong._idchuong);
-        values.put("_idsach",chuong._idsach);
-        values.put("tenchuong",chuong.tenchuong);
-        values.put("duongdan",chuong.duongdan);
-        values.put("audio",chuong.audio);
-        db.update("chuong",values,"_idchuong=?",new String[]{chuong._idchuong+""});
+
+        values.put("_idchuong",ch._idchuong);
+        values.put("_idsach",ch._idsach);
+        values.put("tenchuong",ch.tenchuong);
+        values.put("duongdan",ch.duongdan);
+        values.put("audio",ch.audio);
+        db.update("chuong",values,"_idchuong=?",new String[]{ch._idchuong+""});
+
 
     }
 
