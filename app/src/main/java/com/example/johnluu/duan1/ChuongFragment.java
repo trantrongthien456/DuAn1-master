@@ -121,7 +121,7 @@ public class ChuongFragment extends Fragment {
                         if (tenchuong.isEmpty()) {
                             Toast.makeText(getContext(), "Tên Chuong không du?c r?ng!", Toast.LENGTH_SHORT).show();
                         } else {
-                            ch = new Chuong(tenchuong);
+                            ch = new Chuong(_idsach,tenchuong,duongdan,audio);
                             chuongDAO = new ChuongDAO(getContext());
                             chuongDAO.ThemChuong(ch);
                              capnhatgiaodien_chuong();
