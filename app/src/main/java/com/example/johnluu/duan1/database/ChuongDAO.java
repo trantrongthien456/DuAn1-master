@@ -45,6 +45,8 @@ public class ChuongDAO {
                 String tenchuong =c.getString(2);
                 String duongdan = c.getString(3);
                 String audio = c.getString(4);
+                Chuong chuong = new Chuong(_idchuong,_idsach,tenchuong,duongdan,audio);
+                dsschuong.add(chuong);
 
             }while (c.moveToNext());
         }

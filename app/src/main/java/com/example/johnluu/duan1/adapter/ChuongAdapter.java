@@ -57,11 +57,11 @@ public class ChuongAdapter extends BaseAdapter {
         view = lnf.inflate(R.layout.one_item_chuong, null);
         TextView tv_chuong_one_item = view.findViewById(R.id.tv_idchuong_one_item);
         TextView tv_tenchuong_one_item = view.findViewById(R.id.tv_tenchuong_one_item);
-        ImageView iv_option = view.findViewById(R.id.iv_option_one_item_theloai);
+        ImageView iv_option = view.findViewById(R.id.iv_option_one_item_chuong);
 
 
         Chuong chuong = dsschuong.get(i);
-        tv_chuong_one_item.setText(chuong._idchuong);
+        tv_chuong_one_item.setText(chuong._idchuong+"");
         tv_tenchuong_one_item.setText(chuong.tenchuong);
 
         iv_option.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +143,7 @@ public class ChuongAdapter extends BaseAdapter {
                                 dsschuong = chuongDAO.xemDSChuong();
 
                                 Chuong chuongupdate = new Chuong(_id, et_ten);
+                                chuongDAO.suaChuonh(chuongupdate);
                                 capnhatgiaodien_chuong();
 
 

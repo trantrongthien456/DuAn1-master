@@ -71,20 +71,20 @@ public class ChuongFragment extends Fragment {
                 Button bt_audio = vi.findViewById(R.id.bt_audio);
                 tv_duongdan = vi.findViewById(R.id.tv_duongdan);
                 tv_audio = vi.findViewById(R.id.tv_audio);
-                Spinner sp = vi.findViewById(R.id.sp_sach);
+              final   Spinner sp = vi.findViewById(R.id.sp_sach);
 
 
 
                 builder.setView(vi);
                 final AlertDialog a = builder.create();
 
-                ArrayList<String> spsach = new ArrayList<String>();
+                dssach = new ArrayList<Sach>();
                 dssach.add(new Sach(1,1,1,"Bao cong",""));
                 dssach.add(new Sach(2,1,1,"Thieu lam tu",""));
                 dssach.add(new Sach(3,1,1,"sach lon",""));
 
 
-                ArrayAdapter adapter = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,spsach);
+                ArrayAdapter adapter = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,dssach);
                 sp.setAdapter(adapter);
 
 
@@ -109,7 +109,14 @@ public class ChuongFragment extends Fragment {
                 bt_them_chuong.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        int indexsach = sp.getSelectedItemPosition();
+                        int _idsach = dssach.get(indexsach)._idsach;
+
+
                         String tenchuong = et_tenchuong.getText().toString();
+                        String duongdan = tv_duongdan.getText().toString();
+                        String audio =  tv_audio.getText().toString();
+
 
                         if (tenchuong.isEmpty()) {
                             Toast.makeText(getContext(), "Tên Chuong không du?c r?ng!", Toast.LENGTH_SHORT).show();
@@ -117,7 +124,7 @@ public class ChuongFragment extends Fragment {
                             ch = new Chuong(tenchuong);
                             chuongDAO = new ChuongDAO(getContext());
                             chuongDAO.ThemChuong(ch);
-                            // capnhatgiaodien_Chuong();
+                             capnhatgiaodien_chuong();
                             a.dismiss();
                         }
                     }
