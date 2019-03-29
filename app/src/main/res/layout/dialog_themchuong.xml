@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="#A2E4D9"
+    android:background="#C2E0EC"
     android:layout_height="match_parent">
 
 
@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30dp"
+        android:textColor="#592020"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:text="THEM CHUONG" />
@@ -22,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:textColor="#592020"
         android:text="Ten Chuong :" />
 
     <EditText
@@ -41,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:textColor="#592020"
             android:layout_weight="1"
             android:text="Duong dan :" />
 
@@ -67,6 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:textColor="#592020"
             android:layout_weight="1"
             android:text="Audio:" />
 
@@ -104,7 +108,7 @@
             android:layout_height="wrap_content"
             android:background="#fff"
             android:layout_marginBottom="10dp"
-            android:text="Hu?"
+            android:text="Huy"
             android:layout_marginLeft="10dp"
             android:textColor="#592020"
             android:textStyle="bold" />
